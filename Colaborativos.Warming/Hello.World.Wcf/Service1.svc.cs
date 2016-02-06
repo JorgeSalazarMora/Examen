@@ -15,7 +15,14 @@ namespace Hello.World.Wcf
         public string SayHello (string whoAreYou)
         {
             string resultado;
-            resultado = string.Format("Hello world, {0}", whoAreYou);
+            if (whoAreYou == string.Empty)
+            {
+                resultado = "Hello world";
+            }
+            else
+            {
+                resultado = string.Format("Hello world, {0}", whoAreYou);
+            }
             return (resultado);
         }
 
