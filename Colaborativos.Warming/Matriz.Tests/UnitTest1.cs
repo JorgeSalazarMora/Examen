@@ -78,6 +78,36 @@ namespace Matriz.Tests
            
         }
 
-        
+
+
+        /*
+        This method make the test for a matriz "Transpuesta"
+        */
+        [TestMethod]
+        public void TestTranspuesta()
+        {
+            int[][] laMatrizOriginal = new int[2][];
+            laMatrizOriginal[0][0] = 1;
+            laMatrizOriginal[0][1] = 2;
+            laMatrizOriginal[1][0] = 3;
+            laMatrizOriginal[1][1] = 4;
+
+            int[][] laMatrizBest = new int[2][];
+            laMatrizOriginal[0][0] = 4;
+            laMatrizOriginal[0][1] = 3;
+            laMatrizOriginal[1][0] = 2;
+            laMatrizOriginal[1][1] = 1;
+
+
+            Matriz.Training.Service1 recursos = new Matriz.Training.Service1();
+
+            int[][] laMatrizResultante = recursos.Transpuesta(laMatrizOriginal, 2, 2);
+
+
+            Assert.AreNotSame(laMatrizResultante[2][2], laMatrizOriginal[2][2]);
+        }
+
+
+
     }
 }

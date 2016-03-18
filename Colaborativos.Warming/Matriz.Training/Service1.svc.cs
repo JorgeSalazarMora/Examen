@@ -54,6 +54,24 @@ namespace Matriz.Training
             return resultado;
         }
 
+        public int[][] Transpuesta(int [][]laMatriz, int numFilas, int numColumnas)
+        {
+            // Declare local jagged array with numFilas rows.
+            int[][] resultado = new int[numFilas][];
+            for (int i = 0; i < numFilas; i++)
+            {
+                
+
+                for (int j = 0; j < numColumnas; j++)
+                {
+                    resultado[i][j] = laMatriz[j][i];
+                }
+               
+            }
+            return resultado;
+        }
+
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
