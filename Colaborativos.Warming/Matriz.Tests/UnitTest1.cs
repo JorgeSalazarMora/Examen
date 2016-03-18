@@ -46,18 +46,34 @@ namespace Matriz.Tests
             double[,] laMatrizOriginalB = new double[2,3];
             laMatrizOriginalB[0, 0] = 3;
             laMatrizOriginalB[0, 1] = 4;
+            laMatrizOriginalB[0, 2] = 7;
             laMatrizOriginalB[1, 0] = 5;
             laMatrizOriginalB[1, 1] = 6;
-            laMatrizOriginalB[2, 0] = 7;
-            laMatrizOriginalB[2, 1] = 8;
-            laMatrizOriginalB[3, 0] = 2;
-            laMatrizOriginalB[3, 1] = 9;
+            laMatrizOriginalB[1, 2] = 8;
+
+            double[,] laMatrizBest = new double[4, 3];
+            laMatrizOriginalB[0, 0] = 3;
+            laMatrizOriginalB[0, 1] = 4;
+            laMatrizOriginalB[0, 2] = 7;
+            laMatrizOriginalB[0, 3] = 7;
+            laMatrizOriginalB[1, 0] = 3;
+            laMatrizOriginalB[1, 1] = 4;
+            laMatrizOriginalB[1, 2] = 7;
+            laMatrizOriginalB[1, 3] = 7;
+            laMatrizOriginalB[2, 0] = 3;
+            laMatrizOriginalB[2, 1] = 4;
+            laMatrizOriginalB[2, 2] = 7;
+            laMatrizOriginalB[2, 3] = 7;
+            laMatrizOriginalB[3, 0] = 3;
+            laMatrizOriginalB[3, 1] = 4;
+            laMatrizOriginalB[3, 2] = 7;
+            laMatrizOriginalB[3, 3] = 7;
 
             Matriz.Training.Service1 recursos = new Matriz.Training.Service1();
 
-            double[][] laMatrizResultante = recursos.Copiar(laMatrizOriginalA, 3, 2);
+            double[][] laMatrizResultante = recursos.Multi(laMatrizOriginalA,laMatrizOriginalB, 4, 3);
 
-            Assert.AreEqual(laMatrizResultante[2][0], laMatrizOriginalA[2, 0]);
+            Assert.AreEqual(laMatrizResultante[4][3], laMatrizBest[4, 3]);
 
            
         }
