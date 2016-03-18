@@ -33,6 +33,27 @@ namespace Matriz.Training
             return resultado;
         }
 
+        public double[][] Multi(double[,] laMatrizA, double[,] laMatrizB, int numFilas, int numColumnas)
+        {
+            // Declare local jagged array with numFilas rows.
+            double[][] resultado = new double[numFilas][];
+
+           
+            for (int i = 0; i < numFilas; ++i)
+            {
+                double[] laFila = new double[numColumnas];
+                for (int j = 0; j < numColumnas; ++j)
+                {
+
+                    laFila[j] = laMatrizB[i, j];
+                }
+                resultado[i] = laFila;
+            }
+              
+
+            return resultado;
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
